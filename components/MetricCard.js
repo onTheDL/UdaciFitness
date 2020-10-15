@@ -4,29 +4,32 @@ import { View, StyleSheet, Text } from 'react-native'
 import { getMetricMetaInfo } from '../utils/helpers'
 import { gray } from '../utils/colors'
 
-export default function MetricCard({ metrics }) {
-  return (
-    <View>
-      {/* {date && <DateHeader date={date}/>} */}
-      {Object.keys(metrics).map((metric) => {
-        const { getIcon, displayName, unit, backgroundColor } = getMetricMetaInfo(metric)
-        
-        return (
-          <View style={styles.metric} key={metric}>
-            {getIcon()}
-            <View>
-              <Text style={{fontSize: 20}}>
-                {displayName}
-              </Text>
-              <Text style={{fontSize: 20, color: gray}}>
-                {metrics[metric]} {unit}
-              </Text>
+export default class MetricCard extends React.Component {
+  render(){
+    const { metrics } = this.props
+    return (
+      <View>
+        {/* {date && <DateHeader date={date}/>} */}
+        {Object.keys(metrics).map((metric) => {
+          const { getIcon, displayName, unit, backgroundColor } = getMetricMetaInfo(metric)
+          
+          return (
+            <View style={styles.metric} key={metric}>
+              {getIcon()}
+              <View>
+                <Text style={{fontSize: 20}}>
+                  {displayName}
+                </Text>
+                <Text style={{fontSize: 20, color: gray}}>
+                  {metrics[metric]} {unit}
+                </Text>
+              </View>
             </View>
-          </View>
-        )
-      })}
-    </View>
-  )
+          )
+        })}
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({

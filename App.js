@@ -33,14 +33,19 @@ const Tabs = Platform.OS === 'ios'
 
 const TabNav = () => (
   <Tabs.Navigator
-    initialRouteName='AddEntry'
+    initialRouteName='Add Entry'
     screenOptions={({ route }) => ({
       tabBarIcon: ({ color, size }) => {
         let icon;
 
         // try switch
         if (route.name === 'Add Entry') {
-          icon = <FontAwesome name='plus-square' size={size} color={color} />
+          icon = <FontAwesome 
+            name='plus-square' 
+            size={size} 
+            color={color} 
+          />
+
         } else if (route.name === 'History') {
           icon = <Ionicons name='ios-bookmarks' size={size} color={color} />
         }
