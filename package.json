@@ -24,7 +24,7 @@
     "react-native-calendars": "^1.403.0",
     "react-native-gesture-handler": "~1.7.0",
     "react-native-reanimated": "~1.13.0",
-    "react-native-safe-area-context": "^3.1.8",
+    "react-native-safe-area-context": "^3.1.4",
     "react-native-screens": "~2.10.1",
     "react-native-tab-view": "^2.15.2",
     "react-native-unimodules": "~0.11.0",
@@ -32,7 +32,8 @@
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "styled-components": "^5.2.0",
-    "udacifitness-calendar": "github:ftrevo/react-native-calendars#master"
+    "udacifitness-calendar": "github:ftrevo/react-native-calendars#master",
+    "expo-constants": "~9.2.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
