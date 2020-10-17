@@ -14,6 +14,7 @@ import AddEntry from './components/AddEntry';
 import History from './components/History';
 import EntryDetail from './components/EntryDetail'
 import Live from './components/Live'
+import { setLocalNotification } from './utils/helpers'
 import { purple, white, orange } from './utils/colors';
 
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
@@ -102,6 +103,9 @@ const MainNav = () => (
 )
 
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
   render(){
     return (
       <Provider store={createStore(reducer)}>

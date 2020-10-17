@@ -4,7 +4,9 @@ import { CommonActions } from "@react-navigation/native";
 import { 
   getMetricMetaInfo, 
   timeToString, 
-  getDailyReminderValue 
+  getDailyReminderValue,
+  clearLocalNotification,
+  setLocalNotification, 
 } from "../utils/helpers";
 import UdaciSteppers from "./UdaciSteppers";
 import UdaciSlider from "./UdaciSlider";
@@ -75,7 +77,9 @@ class AddEntry extends Component {
     
     submitEntry({ key, entry });
 
-    // Clear local notification
+    // Clear local notification, then reset for next day
+    clearLocalNotification()
+      .setLocalNotification()
   };
   reset = () => {
     const key = timeToString();
